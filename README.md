@@ -1,14 +1,9 @@
-# OSCAR HACKER TOOL v3.0
+Built OSCAR TOOL v4.0 
 
-Live Sites:
-- Pxxl (Naija Host): https://password-checker.pxxlspace.cv
-- GitHub Pages: https://oscarkelvin054-coder.github.io/password-checker/
+  Real-time password strength analyzer with entropy calculation, crack-time estimation, and debounced live validation.
 
-A powerful password strength checker with hacker-style UI.
-
-Features:
-- Score system 0-100
-- Time to crack calculator
-- Strong password generator
+Tech: HTML/CSS/JS modular architecture.
+ 
+Live at http://password-checker.pxxlspace.cv
 
 Built by Oscar Kelvin - Port Harcourt, Rivers State.
