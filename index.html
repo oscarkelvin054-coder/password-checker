@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oscar Hacker Tool v3.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{background:#0a0a0a;color:#00ff00;font-family:monospace;padding:20px}
+.box{border:2px solid #00ff00;padding:20px;max-width:500px;margin:auto;border-radius:10px}
+input{width:90%;padding:12px;background:#111;color:#00ff00;border:1px solid #00ff00;border-radius:5px}
+button{padding:12px 20px;background:#00ff00;color:#000;border:none;border-radius:5px;margin-top:10px;font-weight:bold}
+.weak{color:#ff0000} .medium{color:yellow} .strong{color:#00ff00}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>🔐 OSCAR HACKER TOOL v3.0</h2>
+<input id="pwd" type="text" placeholder="Enter password">
+<br><button onclick="check()">CHECK STRENGTH</button>
+<p id="result"></p>
+<p id="suggest"></p>
+</div>
+<script>
+function check(){
+ let p=document.getElementById('pwd').value;
+ let score=0; let msg="";
+ if(["123456","password","qwerty","admin","123","letmein"].includes(p.toLowerCase())){
+   document.getElementById('result').innerHTML='<span class=weak>❌ VERY WEAK 0/100 - Common password!</span>';
+   return;
+ }
+ if(p.length>=12) score+=30; else if(p.length>=8) score+=15;
+ if(/[A-Z]/.test(p)) score+=20;
+ if(/[0-9]/.test(p)) score+=20;
+ if(/[!@#$%^&*()_+\-={}\[\]:;"'<>,.?/]/.test(p)) score+=30;
+ let crack = score<40 ? "2 seconds" : score<75 ? "5 days" : "500 years";
+ let color = score<40 ? "weak" : score<75 ? "medium" : "strong";
+ let label = score<40 ? "WEAK" : score<75 ? "MEDIUM" : "STRONG";
+ document.getElementById('result').innerHTML=`<span class=${color}>Score: ${score}/100 - ${label}<br>⏱️ Time to crack: ${crack}</span>`;
+ let chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+ let strong=""; for(let i=0;i<12;i++) strong+=chars[Math.floor(Math.random()*chars.length)];
+ document.getElementById('suggest').innerHTML="💡 Suggested: <b>"+strong+"</b>";
+}
+</script>
+</body>
+</html>
