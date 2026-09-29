@@ -1,13 +1,9 @@
-import hashlib
+password = input("Enter password to check: ")
 
-def check_password(password):
-    print(f"[+] Checking: {password}")
-    # simple demo checker
-    if len(password) < 8:
-        print("Weak: Too short!")
-    else:
-        print("Strong password!")
-    
-if __name__ == "__main__":
-    pwd = input("Enter password to check: ")
-    check_password(pwd)
+if len(password) < 8:
+    print("🔴 WEAK - Too short!")
+elif password == "123456" or password == "password":
+    print("🔴 WEAK - Common password!")
+else:
+    print("🟢 STRONG - You good!")
+    print(f"Length: {len(password)}")
