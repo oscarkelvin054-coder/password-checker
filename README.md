@@ -9,4 +9,4 @@ Features:
 - Time to crack calculator
 - Strong password generator
 
-Built by Oscar Kelvin - Benin City, Edo State.
+Built by Oscar Kelvin - Port Harcourt City, River State.
