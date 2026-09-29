@@ -15,4 +15,4 @@ function updateUI(pwd){ const r=analyzePassword(pwd); el.meter.style.width=r.sco
 const debouncedUpdate = debounce((v)=>updateUI(v), DEBOUNCE_MS);
 el.pwd.addEventListener('input',(e)=>{ const v=e.target.value; if(v.length===1) updateUI(v); el.status.textContent="Typing... waiting 3s"; el.dot.classList.remove('active'); debouncedUpdate(v); });
 document.getElementById('toggle').onclick=()=>{ el.pwd.type=el.pwd.type==='password'?'text':'password'; };
-updateUI("");
+updateUI(""); 
